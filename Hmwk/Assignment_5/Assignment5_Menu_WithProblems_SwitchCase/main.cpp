@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Jacob Gower
  * Created on January 24th, 2021, 11:33 AM
- * Purpose: Menu for Assignment 4 Programs
+ * Purpose: Menu for Assignment 5 Programs
  */
 
 //System Level Libraries
@@ -40,11 +40,11 @@ int main(int argc, char** argv) {
     cout<<"Type 1 for MinMax Problem"<<endl;
     cout<<"Type 2 for Pay in Pennies Problem"<<endl;
     cout<<"Type 3 for isPrime Problem"<<endl;
-    cout<<"Type 4 for Problem"<<endl;
-    cout<<"Type 5 for Problem"<<endl;
-    cout<<"Type 6 for Problem"<<endl;
-    cout<<"Type 7 for Problem"<<endl;
-    cout<<"Type 8 for Problem"<<endl;
+    cout<<"Type 4 for Collatz Sequence Problem"<<endl;
+    cout<<"Type 5 for Collatz Sequence with Output of Sequence Problem"<<endl;
+    cout<<"Type 6 for Wait Timer Problem"<<endl;
+    cout<<"Type 7 for Military to Standard Time Problem"<<endl;
+    cout<<"Type 8 for Present Value Problem"<<endl;
     cout<<"Type 9 for Problem"<<endl;
     cin>>choice;
     
@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
             //Exit stage right!
             
             break;
-        }case '2': { //Factorial Problem\
+        }case '2': { //Factorial Problem
             //Declare Variables
             int n; //Integer to be Input by User
 
@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
             break;
         }case '3': { //Min/Max Integer Problem
             //Declare Variables
-            int n; //Ineger to be Input by User
+            int n; //Integer to be Input by User
 
             //Initialize Variables
             cout<<"Input a number to test if Prime."<<endl;
@@ -153,10 +153,128 @@ int main(int argc, char** argv) {
             
            
             break;
-        }case '6': { //MPG Problem
+        }case '6': { //Wait Timer - Standard Time
+            //Declare Variables
+            int    mins, //Minutes
+                     hr, //Hours
+                   wait, //Waiting Time
+                addHour, //Convert added minutes over 60 to hours
+                pjctMin, //Projected Minutes after waiting
+                 pjctHr, //Projected Hour after Waiting
+                   test; //Test for Hours over 12
+            char choice, //Choice to Continue or Exit   
+                   amPm; //Ante/Post Meridiem for Input
+            string mrdm; //String to hold Value of amPm
+
+            do {    
+                //Initialize or input i.e. set variable values
+                cout<<"Enter hour:"<<endl<<endl;
+                cin>>hr;
+
+                cout<<"Enter minutes:"<<endl<<endl;
+                cin>>mins;
+
+                cout<<"Enter A for AM, P for PM:"<<endl<<endl;
+                cin>>amPm;
+
+                cout<<"Enter waiting time:"<<endl<<endl;
+                cin>>wait;
+
+                addHour = 0;
+
+
+                //Map inputs -> outputs
+                if (amPm=='A'||amPm=='P') {
+                    mrdm=(amPm=='A')?" AM":
+                         (amPm=='P')?" PM":"";
+                }else if (amPm=='a'||amPm=='p') {
+                    mrdm=(amPm=='a')?" AM":
+                         (amPm=='p')?" PM":"";
+                }else {
+                    cout<<"Invalid Input"; 
+                }
+                cout<<"Current time = ";
+                cout<<hr<<":"<<mins<<mrdm<<endl;
+
+                pjctMin=mins+wait;
+                if (pjctMin>=60) {
+                    addHour=pjctMin/60;
+                    pjctMin=pjctMin%60;
+                }
+                pjctHr=hr+addHour;
+                if (pjctHr>=12&&hr<12) {
+                    if ((pjctHr%24)==0&&amPm=='A') {
+                        amPm='P';
+                        pjctHr%=12;
+
+                    }else if ((pjctHr%24)==0&&amPm=='P') {
+                        amPm='A';
+                        pjctHr%=12;
+
+                    }else if ((pjctHr%24)>12&&amPm=='P') {
+                        amPm='A';
+                        pjctHr%=12;
+
+                    }else if ((pjctHr%24)>12&&amPm=='A') {
+                        amPm='P';
+                        pjctHr%=12;
+
+                    }
+                }
+                test=pjctHr%24;
+                if (pjctHr>=12&&hr<12) {
+                    if (test==12&&amPm=='A') {
+                        amPm='P';
+                        pjctHr=12;
+
+                    }else if (test==12&&amPm=='P') {
+                        amPm='A';
+                        pjctHr=12;
+                    }
+                }
+
+                 if (amPm=='A'||amPm=='P') {
+                    mrdm=(amPm=='A')?" AM":
+                         (amPm=='P')?" PM":"";
+                }else if (amPm=='a'||amPm=='p') {
+                    mrdm=(amPm=='a')?" AM":
+                         (amPm=='p')?" PM":"";
+                }else {
+                    cout<<"Invalid Input"; 
+                }
+            //Display the outputs
+                cout<<"Time after waiting period = ";
+                if (pjctHr>=10) {
+                    if (pjctMin>=10) {
+                        cout<<pjctHr<<":"<<pjctMin<<mrdm;
+                        cout<<endl<<endl;
+                    }else {
+                        cout<<pjctHr<<":"<<"0"<<pjctMin<<mrdm;
+                        cout<<endl<<endl;
+                    }
+                }else
+                    if (pjctMin>=10) {
+                        cout<<"0"<<pjctHr<<":"<<pjctMin<<mrdm;
+                        cout<<endl<<endl;
+                    }else {
+                        cout<<"0"<<pjctHr<<":"<<"0"<<pjctMin<<mrdm;
+                        cout<<endl<<endl;
+                    }
+
+                cout<<"Again:"<<endl;
+
+                cin>>choice;
+
+                if (choice=='y'||choice=='Y') {
+                    cout<<endl;
+                }
+
+            }while (choice=='y'||choice=='Y');
+
+            //Exit stage right or left!
              
             break;
-        }case '7': { //MPG Comparison Problem
+        }case '7': { //Military Time Converter
              //Declare Variables
             int mHours, //Military Hours (00:00-23:59)
                 sHours, //Standard Hours (12:00-11:59 AM/PM)
@@ -192,7 +310,7 @@ int main(int argc, char** argv) {
            
            
             break;
-        }case '8': { //Inflation Percentage Problem
+        }case '8': { //Present Value
             //Declare Variables
             float   fv, //Future Value in Dollars
                 intrst, //Yearly Interest Rate as a Percent
