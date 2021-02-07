@@ -31,7 +31,9 @@ int main(int argc, char** argv) {
     fstream in,out; //Input and Output for 
     unsigned int    plyrScr, //Score of the Player
                     cmpScr;  //Score of the Computer
-    char   cardNum;        //Number of Cards in a Deck 
+    int             rndScr;  //Round Score
+    float           avgScr;  //Average Score per round throughout Game
+    char            cardNum; //Number of Cards in a Deck 
     unsigned short n1,n2,n3,n4,n5,n6,     //Random Numbers for Player Cards
                    n7,                    //Random Number for Starter Card
                    n8,n9,n10,n11,n12,n13; //Random Numbers for Computer Cards
@@ -39,6 +41,7 @@ int main(int argc, char** argv) {
            suit,    //Suit to Be Assigned as String
            number,  //Number to be Assigned as String
            card1,card2,card3,card4,card5,card6, //Player's Cards
+           cmpCrd1,cmpCrd2,cmpCrd3,cmpCrd4,     //Computer Cards for Play Phase 
            cStart,       //Starter Card
            crib1,crib2,  //Cards Contributed to the Crib 
            slct1,        //First Card Selected by Player to Put in Crib
@@ -381,8 +384,12 @@ int main(int argc, char** argv) {
             cout<<setw(4)<<card3<<setw(4)<<card4<<endl<<endl;
     }
     
+    cout<<setw(16)<<"Starter Card:"<<endl;
+    cout<<setw(9)<<cStart;
     
-    
+    while (rndScr<31) {
+        
+    }
     
     
     
