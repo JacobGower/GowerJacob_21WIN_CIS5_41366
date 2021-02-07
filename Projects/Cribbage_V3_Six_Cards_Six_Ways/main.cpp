@@ -29,44 +29,41 @@ int main(int argc, char** argv) {
     
     //Declare Variables
     fstream in,out; //Input and Output for 
-    int  plyrScr,  //Score of the Player
-         cmpScr;   //Score of the Computer
-    string //num1, num2, num3, num4, num5, num6,
-           suit,   //Suit to Be Assigned as String
-           number, //Number to be Assigned as String
+    unsigned int    plyrScr, //Score of the Player
+                    cmpScr;  //Score of the Computer
+    char   cardNum;        //Number of Cards in a Deck
+    unsigned short n1,n2,n3,n4,n5,n6,    //Random Numbers for Player Cards
+                   n7,n8,n9,n10,n11,n12, //Random Number for Computer Cards
+                   n13; //Random Number for Starter Card
+    
+    string crdDeck, //File to Pull Information From
+           suit,    //Suit to Be Assigned as String
+           number,  //Number to be Assigned as String
            card1,card2,card3,card4,card5,card6, //Player's Cards
            crib1,crib2,    //Cards Contributed to the Crib 
            select1,        //First Card Selected by Player to Put in Crib
            select2;        //Second Card Selected by Player to Put in Crib
     const int MAX_SCR=121; //Max Score in a Game of Cribbage
-    char   cardNum;        //Number of Cards in a Deck
-             
-    
-    unsigned short n1,n2,n3,n4,n5,n6; //Random Numbers Generated for Cards
-            
               
     
+    //Initialize File Paramaters
+    crdDeck="card.dat";
+    in.open(crdDeck.c_str(),ios::in);
+    
     //Initialize Variables
+    plyrScr=cmpScr=0;
     cardNum=52; //52 Possible Cards to Draw (A,2-10,J,Q,K, then suits)
     
     
     //Play a Round
     //do {
     //"Shuffle" the Cards
-    //Generate the First Two Numbers
+    //Generate the First and Second Numbers
     do{
         n1=rand()%cardNum+1;
         n2=rand()%cardNum+1; 
     //Make Sure Numbers are not Duplicates    
     }while (n2==n1);
-    
-    
-    
-    //Generate Sixth Number
-    do {
-        n6=rand()%cardNum+1;
-    //Compare with Previous Numbers and Prevent Duplicates    
-    }while (n6==n5||n6==n4||n6==n3||n6==n2||n6==n1);
         //Card 1    
         //Assign Value Utilizing Switch Case
         switch (n1) {
@@ -235,8 +232,19 @@ int main(int argc, char** argv) {
                n5==40?"AD":n5==41?"2D" :n5==42?"3D":n5==43?"4D":
                n5==44?"5D":n5==45?"6D" :n5==46?"7D":n5==47?"8D":
                n5==48?"9D":n5==49?"10D":n5==50?"JD":n5==51?"QD":"KD");
+    
+        //Generate Sixth Number
+    do {
+        n6=rand()%cardNum+1;
+    //Compare with Previous Numbers and Prevent Duplicates    
+    }while (n6==n5||n6==n4||n6==n3||n6==n2||n6==n1);    
         //Card 6
         //Utilize fstream to Assign Value
+    string cardIn;
+    for (int card=1;card<=cardNum;card++) {
+        in>>cardIn;
+        if (n6==card) card6=cardIn;
+    }
         
     
     //Display Hand
@@ -245,13 +253,16 @@ int main(int argc, char** argv) {
     cout<<setw(4)<<card2;
     cout<<setw(4)<<card3;
     cout<<setw(4)<<card4;
-    cout<<setw(4)<<card5<<endl;
+    cout<<setw(4)<<card5;
+    cout<<setw(4)<<card6<<endl<<endl<<endl;
   
+    
     cout<<static_cast<int>(n1)<<endl<<endl;
     cout<<static_cast<int>(n2)<<endl<<endl;
-    cout<<static_cast<int>(cValue)<<endl<<static_cast<int>(cSuit);
+    cout<<static_cast<int>(cValue)<<endl<<static_cast<int>(cSuit)<<endl;
+    cout<<"number 6: "<<static_cast<int>(n6)<<endl<<endl;
     
-    //cout<<card6<<endl<<endl;
+    
     
     /*//Ask for Cards to add to the Crib for the Round
     cout<<"Choose a card to add to the crib"<<endl;

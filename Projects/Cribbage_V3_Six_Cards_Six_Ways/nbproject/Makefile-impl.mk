@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Cribbage_V3_Five_Cards_Five_Ways
+PROJECTNAME=Cribbage_V3_Six_Cards_Six_Ways
 
 # Active Configuration
 DEFAULTCONF=Debug
