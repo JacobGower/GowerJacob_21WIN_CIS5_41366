@@ -287,14 +287,88 @@ int main(int argc, char** argv) {
         }
     //If Input is Invalid, Restart Loop
     }while(slct2!=card1&&slct2!=card2&&slct2!=card3&&slct2!=card4&&slct2!=card5&&slct2!=card6);
-   
-        
-   
+    
     //Display Selections to the Crib
     cout<<setw(4)<<slct1<<endl;
-    cout<<setw(4)<<slct2<<endl;
+    cout<<setw(4)<<slct2<<endl<<endl;
     
-    
+    //Display Hand without Crib Selection and Officially Begin Round
+    //If Cards One and Two are Thrown into the Crib
+    if ((slct1==card1&&slct2==card2)||(slct1==card2&&slct2==card1)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card3<<setw(4)<<card4;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards One and Three are Thrown into the Crib
+    }if ((slct1==card1&&slct2==card3)||(slct1==card3&&slct2==card1)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card2<<setw(4)<<card4;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards One and Four are Thrown into the Crib
+    }if ((slct1==card1&&slct2==card4)||(slct1==card4&&slct2==card1)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card2<<setw(4)<<card3;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards One and Five are Thrown into the Crib
+    }if ((slct1==card1&&slct2==card5)||(slct1==card5&&slct2==card1)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card2<<setw(4)<<card3;
+            cout<<setw(4)<<card4<<setw(4)<<card6<<endl<<endl;
+    //If Cards One and Six are Thrown into the Crib
+    }if ((slct1==card1&&slct2==card6)||(slct1==card6&&slct2==card1)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card2<<setw(4)<<card3;
+            cout<<setw(4)<<card4<<setw(4)<<card5<<endl<<endl;
+    //If Cards Two and Three are Thrown into the Crib
+    }if ((slct1==card2&&slct2==card3)||(slct1==card3&&slct2==card2)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card4;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards Two and Four are Thrown into the Crib
+    }if ((slct1==card2&&slct2==card4)||(slct1==card4&&slct2==card2)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card3;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards Two and Five are Thrown into the Crib
+    }if ((slct1==card2&&slct2==card5)||(slct2==card5&&slct1==card2)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card3;
+            cout<<setw(4)<<card4<<setw(4)<<card6<<endl<<endl;
+    //If Cards Two and Six are Thrown into the Crib
+    }if ((slct1==card2&&slct2==card6)||(slct1==card6&&slct2==card2)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card3;
+            cout<<setw(4)<<card4<<setw(4)<<card5<<endl<<endl;
+    //If Cards Three and Four are Thrown into the Crib
+    }if ((slct1==card3&&slct2==card4)||(slct1==card4&&slct2==card3)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card5<<setw(4)<<card6<<endl<<endl;
+    //If Cards Three and Five are Thrown into the Crib
+    }if ((slct1==card3&&slct2==card5)||(slct1==card5&&slct2==card3)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card4<<setw(4)<<card6<<endl<<endl;
+    //If Cards Three and Six are Thrown into the Crib
+    }if ((slct1==card3&&slct2==card6)||(slct1==card6&&slct2==card3)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card4<<setw(4)<<card5<<endl<<endl;
+    //If Cards Four and Five are Thrown into the Crib        
+    }if ((slct1==card4&&slct2==card5)||(slct1==card5&&slct2==card4)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card3<<setw(4)<<card6<<endl<<endl;
+    //If Cards Four and Six are Thrown into the Crib                
+    }if ((slct1==card4&&slct2==card6)||(slct1==card6&&slct2==card4)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card3<<setw(4)<<card5<<endl<<endl;
+    //If Cards Five and Six are Thrown into the Crib                    
+    }if ((slct1==card5&&slct2==card6)||(slct1==card6&&slct2==card5)) {
+            cout<<setw(14)<<"Your Hand:"<<endl;
+            cout<<setw(4)<<card1<<setw(4)<<card2;
+            cout<<setw(4)<<card3<<setw(4)<<card4<<endl<<endl;
+    }
     
     
     

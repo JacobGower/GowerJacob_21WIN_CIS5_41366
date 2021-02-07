@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Cribbage_V5_Crib_Validation
+PROJECTNAME=Cribbage_V4_Crib_Validation
 
 # Active Configuration
 DEFAULTCONF=Debug
