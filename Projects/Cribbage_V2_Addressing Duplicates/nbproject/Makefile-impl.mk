@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Cribbage_V1_Hey_You_Managed_To_Draw
+PROJECTNAME=Cribbage_V1
 
 # Active Configuration
 DEFAULTCONF=Debug
