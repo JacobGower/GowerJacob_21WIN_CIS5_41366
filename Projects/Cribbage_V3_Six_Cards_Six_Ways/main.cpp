@@ -29,9 +29,9 @@ int main(int argc, char** argv) {
     
     //Declare Variables
     fstream in,out; //Input and Output for 
-    int  plyrScr,   //Score of the Player
-         cmpScr;    //Score of the Computer
-    string 
+    int  plyrScr,  //Score of the Player
+         cmpScr;   //Score of the Computer
+    string //num1, num2, num3, num4, num5, num6,
            suit,   //Suit to Be Assigned as String
            number, //Number to be Assigned as String
            card1,card2,card3,card4,card5,card6, //Player's Cards
@@ -42,9 +42,7 @@ int main(int argc, char** argv) {
     char   cardNum;        //Number of Cards in a Deck
              
     
-    unsigned short n1,n2,n3,n4,n5,n6,    //Random Numbers for Player Cards
-                   n7,n8,n9,n10,n11,n12, //Random Number for Computer Cards
-                   n13; //
+    unsigned short n1,n2,n3,n4,n5,n6; //Random Numbers Generated for Cards
             
               
     
@@ -62,6 +60,13 @@ int main(int argc, char** argv) {
     //Make Sure Numbers are not Duplicates    
     }while (n2==n1);
     
+    
+    
+    //Generate Sixth Number
+    do {
+        n6=rand()%cardNum+1;
+    //Compare with Previous Numbers and Prevent Duplicates    
+    }while (n6==n5||n6==n4||n6==n3||n6==n2||n6==n1);
         //Card 1    
         //Assign Value Utilizing Switch Case
         switch (n1) {
@@ -230,12 +235,6 @@ int main(int argc, char** argv) {
                n5==40?"AD":n5==41?"2D" :n5==42?"3D":n5==43?"4D":
                n5==44?"5D":n5==45?"6D" :n5==46?"7D":n5==47?"8D":
                n5==48?"9D":n5==49?"10D":n5==50?"JD":n5==51?"QD":"KD");
-        
-    //Generate Sixth Number
-    do {
-        n6=rand()%cardNum+1;
-    //Compare with Previous Numbers and Prevent Duplicates    
-    }while (n6==n5||n6==n4||n6==n3||n6==n2||n6==n1);
         //Card 6
         //Utilize fstream to Assign Value
         
