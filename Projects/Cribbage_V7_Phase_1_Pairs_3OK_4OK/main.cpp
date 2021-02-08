@@ -58,19 +58,24 @@ int main(int argc, char** argv) {
     plyrScr=cmpScr=avgScr=rounds=0;
     cardNum=52; //52 Possible Cards to Draw (A,2-10,J,Q,K, then suits)
     
-    cout<<"Welcome to Cribbage*!"<<endl;
+    cout<<"Welcome to Cribbage**! (**Terms May Apply)"<<endl;
     cout<<"Remember! The Important numbers are 15 and 31."<<endl;
     cout<<"Ace = 1"<<endl<<"Face Cards = 10"<<endl;
     cout<<"During the Play Phase, play off of your opponents cards";
     cout<<" to get 15 or 31."<<endl;
     cout<<"The Crib is a Chance for extra points for you and your opponent!\n";
     cout<<"So Choose Wisely!\n"<<endl;
+    cout<<"*Crib Scoring Not Implemented*"<<endl;
+    cout<<"*15 and 31 Rules Not Implemented*"<<endl;
     cout<<setw(13)<<"1 Pair ="<<setw(8)<<"2  Points"<<endl;
     cout<<"3 of a Kind ="<<setw(8)<<"6  Points"<<endl;
     cout<<"4 of a Kind ="<<setw(7)<<"12 Points"<<endl<<endl;
-    cout<<"*Not an accurate implementation of Cribbage."<<endl;
+    cout<<"**Not an accurate implementation of Cribbage."<<endl;
     cout<<"This is Approximately 1/3 a Game of Cribbage."<<endl;
-    cout<<"Score to win has been Adjusted Accordingly."<<endl<<endl;
+    cout<<"Score to win has been Adjusted Accordingly."<<endl;
+    cout<<"Pairs, 3 of a Kind, and 4 of a Kind";
+    cout<<" the only ways to score for now."<<endl<<endl;
+    
     
     //Play a Round
     do {
@@ -483,7 +488,7 @@ int main(int argc, char** argv) {
                             if (play1[0]==cStart[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 2: {
@@ -510,18 +515,18 @@ int main(int argc, char** argv) {
                                 &&play1[0]==cStart[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play2[0]==cmpCrd1[0]
                                      &&cmpCrd1[0]==play1[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play3[0]==cmpCrd2[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 3: {
@@ -551,18 +556,18 @@ int main(int argc, char** argv) {
                                 &&play2[0]==cmpCrd1[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play3[0]==cmpCrd2[0]
                                      &&cmpCrd2[0]==play2[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play3[0]==cmpCrd2[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 4: {
@@ -591,18 +596,18 @@ int main(int argc, char** argv) {
                                 &&play3[0]==cmpCrd2[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play4[0]==cmpCrd3[0]
                                      &&cmpCrd3[0]==play3[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play4[0]==cmpCrd3[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }
@@ -619,12 +624,12 @@ int main(int argc, char** argv) {
                                 &&play1[0]==cStart[0]){
                                 cmpScr+=6;
                                 cout<<"6 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (cmpCrd1[0]==play1[0]) {
                                 cmpScr+=2;
                                 cout<<"2 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }
                             break;
                         }case 2: {
@@ -636,13 +641,13 @@ int main(int argc, char** argv) {
                                &&cmpCrd1[0]==play1[0]){
                                cmpScr+=12;
                                cout<<"12 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             //Give 6 Points for 3 of a Kind
                             }else if (cmpCrd2[0]==play2[0]
                                       &&play2[0]==cmpCrd1[0]){
                                 cmpScr+=6;
                                 cout<<"6 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (cmpCrd2[0]==play2[0]) {
                                 cmpScr+=2;
@@ -656,18 +661,18 @@ int main(int argc, char** argv) {
                                &&cmpCrd2[0]==play2[0]){
                                cmpScr+=12;
                                cout<<"12 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             //Give 6 Points for 3 of a Kind
                             }else if (cmpCrd3[0]==play3[0]
                                       &&play3[0]==cmpCrd2[0]){
                                 cmpScr+=6;
                                 cout<<"6 Points! The computer now has ";
-                                cout<<plyrScr<<" Points";
+                                cout<<plyrScr<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (cmpCrd3[0]==play3[0]) {
                                 cmpScr+=2;
                                 cout<<"2 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }
                             break;
                         }case 4: {
@@ -678,18 +683,18 @@ int main(int argc, char** argv) {
                                &&cmpCrd3[0]==play3[0]){
                                 cmpScr+=12;
                                 cout<<"12 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             //Give 6 Points for 3 of a Kind
                             }else if (cmpCrd4[0]==play4[0]
                                       &&play4[0]==cmpCrd3[0]){
                                 cmpScr+=6;
                                 cout<<"6 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (cmpCrd4[0]==play4[0]) {
                                 cmpScr+=2;
                                 cout<<"2 Points! The computer now has ";
-                                cout<<cmpScr<<" Points";
+                                cout<<cmpScr<<" Points"<<endl;
                             }
                             break;
                         }
@@ -713,7 +718,7 @@ int main(int argc, char** argv) {
                                 if (cmpCrd1[0]==cStart[0]) {
                                     cmpScr+=2;
                                     cout<<"2 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }
                                 break;
                             }case 3: {
@@ -724,18 +729,18 @@ int main(int argc, char** argv) {
                                     &&cmpCrd1[0]==cStart[0]){
                                     cmpScr+=12;
                                     cout<<"12 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 //Give 6 Points for 3 of a Kind
                                 }else if (cmpCrd2[0]==play1[0]
                                           &&play1[0]==cmpCrd1[0]){
                                     cmpScr+=6;
                                     cout<<"6 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }//Give 2 Points for a Pair
                                 else if (cmpCrd2[0]==play1[0]) {
                                     cmpScr+=2;
                                     cout<<"2 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }
                                 break;
                             }case 2: {
@@ -746,18 +751,18 @@ int main(int argc, char** argv) {
                                     &&cmpCrd2[0]==play1[0]){
                                     cmpScr+=12;
                                     cout<<"12 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 //Give 6 Points for 3 of a Kind
                                 }else if (cmpCrd3[0]==play2[0]
                                           &&play2[0]==cmpCrd2[0]){
                                     cmpScr+=6;
                                     cout<<"6 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }//Give 2 Points for a Pair
                                 else if (cmpCrd3[0]==play2[0]) {
                                     cmpScr+=2;
                                     cout<<"2 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }
                                 break;
                             }case 1: {
@@ -768,18 +773,18 @@ int main(int argc, char** argv) {
                                     &&cmpCrd3[0]==play2[0]){
                                     cmpScr+=12;
                                     cout<<"6 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 //Give 6 Points for 3 of a Kind
                                 }else if (cmpCrd4[0]==play3[0]
                                           &&play3[0]==cmpCrd3[0]){
                                     cmpScr+=6;
                                     cout<<"6 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }//Give 2 Points for a Pair
                                 else if (cmpCrd4[0]==play3[0]) {
                                     cmpScr+=2;
                                     cout<<"6 Points! The computer now has ";
-                                    cout<<cmpScr<<" Points";
+                                    cout<<cmpScr<<" Points"<<endl;
                                 }
                                 break;
                             }
@@ -811,12 +816,12 @@ int main(int argc, char** argv) {
                                 &&cmpCrd1[0]==cStart[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play1[0]==cmpCrd1[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 3: {
@@ -844,18 +849,18 @@ int main(int argc, char** argv) {
                                 &&play1[0]==cmpCrd1[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play2[0]==cmpCrd2[0]
                                      &&cmpCrd2[0]==play1[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play2[0]==cmpCrd2[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 2: {
@@ -884,18 +889,18 @@ int main(int argc, char** argv) {
                                 &&play2[0]==cmpCrd1[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play3[0]==cmpCrd3[0]
                                      &&cmpCrd3[0]==play2[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play3[0]==cmpCrd3[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }case 1: {
@@ -925,18 +930,18 @@ int main(int argc, char** argv) {
                                 &&play3[0]==cmpCrd3[0]){
                                 plyrScr+=12;
                                 cout<<"12 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 6 Points for 3 of a Kind
                             else if (play4[0]==cmpCrd4[0]
                                      &&cmpCrd4[0]==play3[0]){
                                 plyrScr+=6;
                                 cout<<"6 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
                             else if (play4[0]==cmpCrd4[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
-                                cout<<" Points";
+                                cout<<" Points"<<endl;
                             }
                             break;
                         }
@@ -947,7 +952,7 @@ int main(int argc, char** argv) {
             }
                
         }
-        
+    plyrScr+=50    
     //Determine whether or not the Game Continues
     in.close();    
     }while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR);
@@ -980,3 +985,5 @@ int main(int argc, char** argv) {
     //Exit the Program - Cleanup
     
     return 0;
+}
+
