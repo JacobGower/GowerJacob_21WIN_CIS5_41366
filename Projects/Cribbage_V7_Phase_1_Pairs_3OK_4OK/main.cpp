@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
     
     
     //Play a Round
+    //Determine whether or not the Game Continues
     while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR) {
         //Initialize File Parameters for Card Generation
         crdDeck="card.dat";
@@ -771,7 +772,7 @@ int main(int argc, char** argv) {
                                     &&play3[0]==cmpCrd3[0]
                                     &&cmpCrd3[0]==play2[0]){
                                     cmpScr+=12;
-                                    cout<<"6 Points! The computer now has ";
+                                    cout<<"12 Points! The computer now has ";
                                     cout<<cmpScr<<" Points"<<endl;
                                 //Give 6 Points for 3 of a Kind
                                 }else if (cmpCrd4[0]==play3[0]
@@ -782,7 +783,7 @@ int main(int argc, char** argv) {
                                 }//Give 2 Points for a Pair
                                 else if (cmpCrd4[0]==play3[0]) {
                                     cmpScr+=2;
-                                    cout<<"6 Points! The computer now has ";
+                                    cout<<"2 Points! The computer now has ";
                                     cout<<cmpScr<<" Points"<<endl;
                                 }
                                 break;
@@ -950,9 +951,8 @@ int main(int argc, char** argv) {
             break;
             }
                
-        }
-    plyrScr+=41;    
-    //Determine whether or not the Game Continues
+        }  
+    //End of Round: Determine whether or not the Game Continues
     in.close();    
     }
     
