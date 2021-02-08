@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare Variables
-    fstream in,out; //Input and Output for 
+    fstream in,out; //Input and Output for fstream 
     unsigned int    plyrScr, //Score of the Player
                     cmpScr,  //Score of the Computer
                     rounds;   //Counter for the Round
