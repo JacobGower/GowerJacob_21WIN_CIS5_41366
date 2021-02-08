@@ -78,8 +78,8 @@ int main(int argc, char** argv) {
     
     
     //Play a Round
-    do {
-        //Initialize File Paramaters for Card Generation
+    while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR) {
+        //Initialize File Parameters for Card Generation
         crdDeck="card.dat";
         in.open(crdDeck.c_str(),ios::in);
         //Increment Round
@@ -523,7 +523,7 @@ int main(int argc, char** argv) {
                                 cout<<"6 Points! You now have "<<plyrScr;
                                 cout<<" Points"<<endl;
                             }//Give 2 Points for a Pair
-                            else if (play3[0]==cmpCrd2[0]) {
+                            else if (play2[0]==cmpCrd1[0]) {
                                 plyrScr+=2;
                                 cout<<"2 Points! You now have "<<plyrScr;
                                 cout<<" Points"<<endl;
@@ -634,7 +634,6 @@ int main(int argc, char** argv) {
                             break;
                         }case 2: {
                             cout<<cmpCrd2<<endl;
-                            cout<<cmpCrd3<<endl;
                             //Give 12 Points for 4 of a Kind
                             if (cmpCrd2[0]==play2[0]
                                &&play2[0]==cmpCrd1[0]
@@ -952,10 +951,10 @@ int main(int argc, char** argv) {
             }
                
         }
-    plyrScr+=50    
+    plyrScr+=41;    
     //Determine whether or not the Game Continues
     in.close();    
-    }while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR);
+    }
     
     //if the Player Wins
     if (plyrScr>cmpScr) {
@@ -974,11 +973,11 @@ int main(int argc, char** argv) {
     avgScr=static_cast<float>(plyrScr)/static_cast<float>(rounds);
     cout<<"Or "<<fixed<<setprecision(2)<<avgScr<<" if you like decimals."<<endl;
     
-    //Initialize File Paramaters for Card Generation
+    //Initialize File Parameters for Card Generation
     scoreFl="Score.dat";
     out.open(scoreFl.c_str(),ios::out);
     //Write Scores to File for Storage
-    out<<plyrScr<<endl;
+    out<<"Your Last Score"<<endl<<plyrScr<<endl;
     
     
     out.close();        

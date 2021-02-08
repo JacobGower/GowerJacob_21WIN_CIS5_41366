@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Cribbage_V6_Phase_1_Pairs_3OK_4OK
+PROJECTNAME=Cribbage_V7_Phase_1_Pairs_3OK_4OK
 
 # Active Configuration
 DEFAULTCONF=Debug
