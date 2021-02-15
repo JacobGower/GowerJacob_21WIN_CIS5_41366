@@ -79,11 +79,13 @@ int main(int argc, char** argv) {
     cout<<"Pairs, 3 of a Kind, and 4 of a Kind";
     cout<<" the only ways to score for now."<<endl<<endl;
     
-    numGen(randNum, cardNum);
+    int q=0;
     //Play a Round
     //Determine whether or not the Game Continues
-    /*while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR) {
-        //Initialize File Parameters for Card Generation
+    //while (plyrScr<MAX_SCR&&cmpScr<MAX_SCR) {
+    while  (q<5) {
+        numGen(randNum, cardNum);
+        /*//Initialize File Parameters for Card Generation
         crdDeck="card.dat";
         in.open(crdDeck.c_str(),ios::in);
         //Increment Round
@@ -894,10 +896,11 @@ int main(int argc, char** argv) {
                
         }  
     //End of Round: Determine whether or not the Game Continues
-    in.close();    
+    in.close();*/    
+        q++;
     }
     
-    //if the Player Wins
+    /*//if the Player Wins
     if (plyrScr>cmpScr) {
         cout<<"Congratulations! You Won!"<<endl;
     }//If the Computer Wins
@@ -923,11 +926,12 @@ int main(int argc, char** argv) {
     
     out.close();        
     //Exit the Program - Cleanup
- */   
+  */
     return 0;
 }
 void numGen(vector<int> &randNum, char cardNum) {
     int i=0;
+    randNum.clear();//Clear the Vector between Rounds
     do{ 
         int j=0;
         //Generate Random Number
@@ -943,5 +947,8 @@ void numGen(vector<int> &randNum, char cardNum) {
         }
          i++;
     }while (randNum.size()<13);//only 13 cards in a round
-    cout<<randNum.size()<<endl;
+    for (int k=0;k<13;k++) {
+        cout<<randNum[k]<<" ";//test output
+    }
+    cout<<endl;
 }
